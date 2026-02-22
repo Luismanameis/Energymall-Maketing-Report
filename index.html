@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARKETING SEGMENT AUDIT | FEB 2026</title>
+    <title>ENERGYMALL | MARKETING SEGMENT AUDIT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #050505; color: #e2e8f0; font-family: 'Space Grotesk', sans-serif; }
+        :root {
+            --em-red: #E31E24;
+            --em-black: #050505;
+            --em-white: #FFFFFF;
+        }
+        body { background-color: var(--em-black); color: #e2e8f0; font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Branding Header */
+        .brand-bar {
+            background-color: var(--em-white);
+            height: 4px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
+        }
+
         .segment-container { border: 1px solid #1a1a1a; background: #0a0a0a; border-radius: 16px; overflow: hidden; margin-bottom: 30px; }
         .segment-header { padding: 15px 25px; border-bottom: 1px solid #1a1a1a; display: flex; justify-content: space-between; align-items: center; }
         .stat-card { background: #0f0f0f; border: 1px solid #1a1a1a; padding: 20px; border-radius: 12px; }
@@ -15,16 +32,30 @@
         .value { font-size: 1.4rem; font-weight: 700; color: #fff; }
         .grid-row { display: grid; grid-template-columns: 1fr auto; padding: 10px 0; border-bottom: 1px solid #111; font-size: 0.85rem; }
         .grid-row:last-child { border: none; }
+        
+        /* Accent Lines */
         .b2c-accent { border-top: 4px solid #3b82f6; }
         .service-accent { border-top: 4px solid #a855f7; }
         .enterprise-accent { border-top: 4px solid #22c55e; }
+
+        .em-text-red { color: var(--em-red); }
     </style>
 </head>
 <body class="p-4 md:p-10">
 
-    <header class="max-w-6xl mx-auto mb-10 border-b border-zinc-800 pb-6">
-        <h1 class="text-3xl font-bold tracking-tighter italic">MARKETING <span class="text-zinc-500">SEGMENTS</span></h1>
-        <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest">February 2026 Performance Audit</p>
+    <div class="brand-bar"></div>
+
+    <header class="max-w-6xl mx-auto mb-10 pt-6 border-b border-zinc-800 pb-6 flex justify-between items-end">
+        <div>
+            <h1 class="text-4xl font-black tracking-tighter uppercase italic">
+                ENERGY<span class="em-text-red">MALL</span>
+            </h1>
+            <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.4em]">Marketing Segment Audit</p>
+        </div>
+        <div class="text-right hidden md:block">
+            <p class="text-xs font-bold text-white uppercase">February 2026</p>
+            <p class="text-[9px] text-zinc-500 uppercase tracking-widest">Internal Report v3.1</p>
+        </div>
     </header>
 
     <main class="max-w-6xl mx-auto">
@@ -122,8 +153,11 @@
 
     </main>
 
-    <footer class="max-w-6xl mx-auto mt-20 text-center opacity-20 pb-10">
-        <p class="text-[8px] uppercase tracking-[1.5rem] font-bold">Energymall Intelligence System</p>
+    <footer class="max-w-6xl mx-auto mt-20 text-center border-t border-zinc-900 pt-10 pb-10">
+        <p class="text-[10px] text-white uppercase tracking-[1rem] font-black italic">
+            ENERGY<span class="em-text-red">MALL</span>
+        </p>
+        <p class="text-[8px] uppercase tracking-[0.5rem] font-bold text-zinc-600 mt-2">Intelligence System & Protocol</p>
     </footer>
 
 </body>
