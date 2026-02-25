@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENERGYMALL | PERFORMANCE DASHBOARD</title>
+    <title>ENERGYMALL | MARKETING KPI AUDIT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --em-red: #E31E24;
-            --em-green: #22c55e;
+            --em-red: #FF0000;
+            --em-green: #00FF41;
             --em-black: #050505;
             --em-white: #FFFFFF;
         }
@@ -20,23 +20,24 @@
         .segment-container { border: 2px solid #1a1a1a; background: #0a0a0a; border-radius: 20px; overflow: hidden; margin-bottom: 40px; }
         .segment-header { padding: 25px 30px; border-bottom: 1px solid #1a1a1a; display: flex; justify-content: space-between; align-items: center; }
         
-        .segment-title { font-size: 1.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+        /* Heading in Bold Red as per instructions */
+        .segment-title { font-size: 1.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; color: var(--em-red) !important; }
         
         .stat-card { background: #0f0f0f; border: 1px solid #1a1a1a; padding: 25px; border-radius: 14px; position: relative; }
         
         .label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: #777; font-weight: 700; margin-bottom: 8px; display: block; }
         .value { font-size: 2.2rem; font-weight: 900; color: #fff; line-height: 1; }
         
-        /* Conditional Coloring Classes */
+        /* Conditional Coloring Classes based on 50% threshold */
         .status-fail { color: var(--em-red) !important; }
         .status-pass { color: var(--em-green) !important; }
-        .badge-fail { background: rgba(227, 30, 36, 0.1); color: var(--em-red); }
-        .badge-pass { background: rgba(34, 197, 94, 0.1); color: var(--em-green); }
+        .badge-fail { background: rgba(255, 0, 0, 0.1); color: var(--em-red); border: 1px solid var(--em-red); }
+        .badge-pass { background: rgba(0, 255, 65, 0.1); color: var(--em-green); border: 1px solid var(--em-green); }
 
-        .pct-badge { font-size: 0.75rem; font-weight: 900; padding: 4px 10px; border-radius: 6px; margin-top: 12px; display: inline-block; border: 1px solid currentColor; }
+        .pct-badge { font-size: 0.75rem; font-weight: 900; padding: 4px 10px; border-radius: 6px; margin-top: 12px; display: inline-block; }
 
         .grid-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #111; font-size: 1.1rem; }
-        .row-val { font-weight: 900; font-size: 1.3rem; display: block; text-align: right; }
+        .row-val { font-weight: 900; font-size: 1.3rem; display: block; text-align: right; color: #fff; }
         .row-pct { font-size: 0.75rem; font-weight: 800; display: block; text-align: right; text-transform: uppercase; }
 
         .em-text-red { color: var(--em-red); }
@@ -62,25 +63,25 @@
 
     <main class="max-w-7xl mx-auto">
 
-        <section class="segment-container border-t-[6px] border-t-blue-500">
-            <div class="segment-header bg-blue-900/10">
-                <h2 class="segment-title text-blue-500 text-3xl">B2C (Retail)</h2>
+        <section class="segment-container border-t-[6px] border-t-red-600">
+            <div class="segment-header bg-red-900/10">
+                <h2 class="segment-title">B2C (Retail)</h2>
             </div>
             <div class="p-8">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
                     <div class="stat-card">
                         <span class="label">Leads</span>
-                        <div class="value">161</div>
-                        <div class="pct-badge badge-fail">5.37% Achieved</div>
+                        <div class="value">197</div>
+                        <div class="pct-badge badge-fail">6.57% Achieved</div>
                     </div>
                     <div class="stat-card">
                         <span class="label">Reach</span>
-                        <div class="value">5,147</div>
+                        <div class="value">5.1k</div>
                         <div class="pct-badge badge-fail">5.15% Achieved</div>
                     </div>
                     <div class="stat-card">
                         <span class="label">Views</span>
-                        <div class="value">11,262</div>
+                        <div class="value">11.3k</div>
                         <div class="pct-badge badge-fail">0.75% Achieved</div>
                     </div>
                     <div class="stat-card">
@@ -92,16 +93,16 @@
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
-                        <span class="label text-blue-400 border-b border-blue-900 pb-2 mb-4">Social Posting (Content Velocity)</span>
-                        <div class="grid-row"><span>Facebook Posts</span><div><span class="row-val status-pass">37</span><span class="row-pct status-pass">185.00%</span></div></div>
-                        <div class="grid-row"><span>Instagram Posts</span><div><span class="row-val status-pass">37</span><span class="row-pct status-pass">185.00%</span></div></div>
-                        <div class="grid-row"><span>TikTok Posts</span><div><span class="row-val status-pass">37</span><span class="row-pct status-pass">185.00%</span></div></div>
+                        <span class="label text-zinc-400 border-b border-zinc-800 pb-2 mb-4">Social Velocity (Feb)</span>
+                        <div class="grid-row"><span>Facebook Posts</span><div><span class="row-val">37</span><span class="row-pct status-pass">185.00%</span></div></div>
+                        <div class="grid-row"><span>Instagram Posts</span><div><span class="row-val">37</span><span class="row-pct status-pass">185.00%</span></div></div>
+                        <div class="grid-row"><span>TikTok Posts</span><div><span class="row-val">37</span><span class="row-pct status-pass">185.00%</span></div></div>
                     </div>
                     <div>
-                        <span class="label text-blue-400 border-b border-blue-900 pb-2 mb-4">Traffic & Awareness</span>
-                        <div class="grid-row"><span>Organic Reach</span><div><span class="row-val status-fail">5,147</span><span class="row-pct status-fail">5.15%</span></div></div>
-                        <div class="grid-row"><span>Total Reach</span><div><span class="row-val status-fail">5,147</span><span class="row-pct status-fail">0.07%</span></div></div>
-                        <div class="grid-row"><span>New Followers</span><div><span class="row-val status-fail">0</span><span class="row-pct status-fail">0.00%</span></div></div>
+                        <span class="label text-zinc-400 border-b border-zinc-800 pb-2 mb-4">Growth Metrics</span>
+                        <div class="grid-row"><span>Organic Reach</span><div><span class="row-val">5,147</span><span class="row-pct status-fail">5.15%</span></div></div>
+                        <div class="grid-row"><span>Total Reach</span><div><span class="row-val">5,147</span><span class="row-pct status-fail">0.07%</span></div></div>
+                        <div class="grid-row"><span>New Followers</span><div><span class="row-val">0</span><span class="row-pct status-fail">0.00%</span></div></div>
                     </div>
                 </div>
             </div>
@@ -109,49 +110,49 @@
 
         <section class="segment-container border-t-[6px] border-t-green-500">
             <div class="segment-header bg-green-900/10">
-                <h2 class="segment-title text-green-500 text-3xl">Enterprise</h2>
+                <h2 class="segment-title">Enterprise</h2>
             </div>
             <div class="p-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                     <div class="stat-card">
                         <span class="label">Email Open Rate</span>
-                        <div class="value status-pass">74.80%</div>
-                        <div class="pct-badge badge-pass">High Performance</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="label">B2B Leads</span>
-                        <div class="value">1</div>
-                        <div class="pct-badge badge-fail">1.00% Achieved</div>
+                        <div class="value status-pass">74.8%</div>
+                        <div class="pct-badge badge-pass">KPI EXCEEDED</div>
                     </div>
                     <div class="stat-card">
                         <span class="label">LinkedIn Posts</span>
-                        <div class="value">2</div>
-                        <div class="pct-badge badge-fail">16.67% Achieved</div>
+                        <div class="value">4</div>
+                        <div class="pct-badge badge-fail">33.33% Achieved</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="label">SEO Articles</span>
+                        <div class="value">3</div>
+                        <div class="pct-badge badge-fail">15.00% Achieved</div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
-                        <span class="label text-green-400 border-b border-green-900 pb-2 mb-4">Lead Generation</span>
-                        <div class="grid-row"><span>Email Addresses Gen</span><div><span class="row-val status-fail">20</span><span class="row-pct status-fail">0.40%</span></div></div>
-                        <div class="grid-row"><span>Leads From Email</span><div><span class="row-val status-fail">1</span><span class="row-pct status-fail">1.00%</span></div></div>
+                        <span class="label text-green-400 border-b border-green-900 pb-2 mb-4">B2B Lead Pipeline</span>
+                        <div class="grid-row"><span>Emails Generated</span><div><span class="row-val">20</span><span class="row-pct status-fail">0.40%</span></div></div>
+                        <div class="grid-row"><span>Email Conversion</span><div><span class="row-val">1</span><span class="row-pct status-fail">1.00%</span></div></div>
                     </div>
                     <div>
-                        <span class="label text-green-400 border-b border-green-900 pb-2 mb-4">Content & Ranking</span>
-                        <div class="grid-row"><span>Total Articles Done</span><div><span class="row-val status-fail">1</span><span class="row-pct status-fail">5.00%</span></div></div>
-                        <div class="grid-row"><span>SEO Overall Ranking</span><div><span class="row-val status-fail">2</span><span class="row-pct status-fail">CRITICAL</span></div></div>
+                        <span class="label text-green-400 border-b border-green-900 pb-2 mb-4">Search Visibility</span>
+                        <div class="grid-row"><span>SEO Articles Done</span><div><span class="row-val">3</span><span class="row-pct status-fail">15.00%</span></div></div>
+                        <div class="grid-row"><span>Overall Ranking</span><div><span class="row-val">2</span><span class="row-pct status-fail">0.00%</span></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="segment-container border-t-[6px] border-t-purple-500">
-            <div class="segment-header bg-purple-900/10">
-                <h2 class="segment-title text-purple-500 text-3xl">Service</h2>
+        <section class="segment-container border-t-[6px] border-t-zinc-700">
+            <div class="segment-header bg-zinc-900/10">
+                <h2 class="segment-title">Service</h2>
             </div>
             <div class="p-8 text-center py-20">
-                <p class="text-zinc-600 font-bold uppercase tracking-widest text-xl">All Service Metrics Currently at 0.00%</p>
-                <div class="mt-4 inline-block px-6 py-2 border border-red-900 bg-red-900/20 text-red-500 font-black rounded-lg uppercase">Status: Underperforming</div>
+                <p class="text-zinc-600 font-bold uppercase tracking-widest text-xl">All Service Metrics At 0.00%</p>
+                <div class="mt-4 inline-block px-6 py-2 border border-red-900 bg-red-900/20 text-red-500 font-black rounded-lg uppercase">Action Required</div>
             </div>
         </section>
 
@@ -159,7 +160,7 @@
 
     <footer class="max-w-7xl mx-auto mt-24 text-center border-t border-zinc-900 pt-12 pb-16">
         <p class="text-3xl text-white uppercase tracking-[1.5rem] font-black italic">ENERGY<span class="em-text-red">MALL</span></p>
-        <p class="text-[10px] uppercase tracking-[0.8rem] font-bold text-zinc-600 mt-6 italic">Data validated against February target sheets.</p>
+        <p class="text-[10px] uppercase tracking-[0.8rem] font-bold text-zinc-600 mt-6 italic">Marketing Audit // Command Protocol FEB-26</p>
     </footer>
 
 </body>
