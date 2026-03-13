@@ -11,50 +11,49 @@ function fixPadding(){
 window.addEventListener('load',fixPadding);
 window.addEventListener('resize',fixPadding);
 </script>
-<title>ENERGYMALL — Full Marketing Inventory · March 2026</title>
+<title>ENERGYMALL — Marketing Department Master Report</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #FDFDFD; --white: #FFFFFF; --ink: #1A1A1A; --ink2: #444444;
-  --muted: #999999; --border: #EEEEEE; --accent: #D91E27; /* EM RED */
+  --bg: #FFFFFF; --white: #FFFFFF; --ink: #1A1A1A; --ink2: #444444;
+  --muted: #999999; --border: #DDDDDD; --accent: #D91E27; /* ENERGYMALL RED */
   --surface: #F9F9F9;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.4; }
+body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.2; }
 
-/* HEADER */
-.fixed-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 3px solid var(--accent); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-.ticker { background: var(--accent); padding: 5px 0; color: white; font-family: 'Barlow Condensed'; font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em; overflow: hidden; }
-.ticker-track { display: inline-flex; white-space: nowrap; animation: tick 50s linear infinite; }
-.ticker-item { padding: 0 30px; }
+/* FIXED HEADER */
+.fixed-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 4px solid var(--accent); }
+.ticker { background: var(--accent); padding: 4px 0; color: white; font-family: 'Barlow Condensed'; font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: 0.15em; overflow: hidden; }
+.ticker-track { display: inline-flex; white-space: nowrap; animation: tick 60s linear infinite; }
+.ticker-item { padding: 0 40px; }
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-.masthead { display: flex; align-items: center; justify-content: space-between; padding: 12px 40px; }
-.brand { display: flex; align-items: center; gap: 15px; }
-.brand-icon { width: 40px; height: 40px; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Barlow Condensed'; font-size: 1.2rem; }
-.brand-text h1 { font-family: 'Barlow Condensed'; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.brand-text p { font-size: 10px; text-transform: uppercase; color: var(--muted); font-weight: 700; letter-spacing: 0.1em; }
+.masthead { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; }
+.brand-group { display: flex; align-items: center; gap: 20px; }
+.brand-logo { background: var(--accent); color: white; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-family: 'Barlow Condensed'; font-size: 1.4rem; }
+.brand-title h1 { font-family: 'Barlow Condensed'; font-size: 1.8rem; font-weight: 900; line-height: 0.9; text-transform: uppercase; }
+.brand-title p { font-size: 10px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; }
 
-/* LAYOUT */
-.page { max-width: 1600px; margin: 0 auto; padding: 40px; }
-section { margin-bottom: 40px; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+/* CONTENT */
+.page { max-width: 1400px; margin: 0 auto; padding: 40px 50px; }
+section { margin-bottom: 60px; }
+.dept-head { background: var(--ink); color: white; padding: 10px 20px; display: flex; align-items: baseline; gap: 15px; margin-bottom: 5px; }
+.dept-name { font-family: 'Barlow Condensed'; font-size: 1.6rem; font-weight: 900; text-transform: uppercase; }
+.dept-month { font-size: 11px; color: var(--accent); font-weight: 800; text-transform: uppercase; }
 
-.sec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
-.sec-tag { background: var(--accent); color: white; font-family: 'Barlow Condensed'; font-size: 12px; font-weight: 800; padding: 2px 8px; }
-.sec-title { font-family: 'Barlow Condensed'; font-size: 1.4rem; font-weight: 900; text-transform: uppercase; }
+.tbl-wrap { border: 1px solid var(--ink); margin-bottom: 30px; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #EEE; color: var(--ink); font-family: 'Barlow Condensed'; font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 12px 15px; text-align: left; border-bottom: 2px solid var(--ink); }
+td { padding: 9px 15px; font-size: 13px; font-weight: 600; border-bottom: 1px solid #EEE; }
+tr:nth-child(even) { background: #FAFAFA; }
 
-/* TABLES */
-.tbl-card { background: white; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { background: #F4F4F4; text-align: left; padding: 12px 15px; font-size: 10px; text-transform: uppercase; font-weight: 800; color: var(--ink); border-bottom: 2px solid #DDD; }
-td { padding: 10px 15px; border-bottom: 1px solid var(--border); font-weight: 500; }
-.val-zero { color: #BBB; font-weight: 400; }
+.sub-cat { background: #F2F2F2 !important; font-weight: 800; font-size: 11px; text-transform: uppercase; color: var(--accent); border-top: 1px solid #DDD; }
 .val-high { color: var(--accent); font-weight: 800; }
-.row-cat { background: #FAFAFA; font-weight: 800; font-size: 11px; text-transform: uppercase; color: var(--accent); }
+.val-zero { color: #AAA; }
 
-@media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } }
+@media print { .fixed-header { position: static; } .page { padding: 0; } }
 </style>
 </head>
 <body>
@@ -62,24 +61,23 @@ td { padding: 10px 15px; border-bottom: 1px solid var(--border); font-weight: 50
 <div class="fixed-header">
   <div class="ticker">
     <div class="ticker-track">
-      <span class="ticker-item">ENERGYMALL B2C: 21 VIDEOS (105%)</span><span class="ticker-item">|</span>
-      <span class="ticker-item">SERVICE: 5,352 EMAIL BLASTS</span><span class="ticker-item">|</span>
-      <span class="ticker-item">ORGANIC REACH: 48.1%</span><span class="ticker-item">|</span>
-      <span class="ticker-item">SEO: 15 ARTICLES (75%)</span><span class="ticker-item">|</span>
-      <span class="ticker-item">ENTERPRISE: 2 LINKEDIN POSTS</span>
+      <span class="ticker-item">B2C VIDEOS: 21 (105%)</span><span class="ticker-item">·</span>
+      <span class="ticker-item">SERVICE EMAILS: 5,352 SENT</span><span class="ticker-item">·</span>
+      <span class="ticker-item">ENTERPRISE EMAILS: 12,982 GENERATED</span><span class="ticker-item">·</span>
+      <span class="ticker-item">B2C LEADS: 99 ACHIEVED</span>
     </div>
   </div>
   <div class="masthead">
-    <div class="brand">
-      <div class="brand-icon">EM</div>
-      <div class="brand-text">
-        <h1>ENERGYMALL COMMAND</h1>
-        <p>Full Marketing Inventory · March 2026</p>
+    <div class="brand-group">
+      <div class="brand-logo">EM</div>
+      <div class="brand-title">
+        <h1>ENERGYMALL MARKETING</h1>
+        <p>Comprehensive Departmental Report · March 2026</p>
       </div>
     </div>
-    <div style="text-align: right;">
-      <div style="font-family: 'Barlow Condensed'; font-size: 1.2rem; font-weight: 800; color: var(--accent);">FULL SEGMENT AUDIT</div>
-      <div style="font-size: 9px; color: var(--muted); font-weight: 700;">ALL 0% METRICS INCLUDED</div>
+    <div style="text-align: right; font-family: 'Barlow Condensed';">
+      <div style="font-size: 1.2rem; font-weight: 900;">ALL-SEGMENT AUDIT</div>
+      <div style="font-size: 10px; color: var(--accent); font-weight: 800;">100% METRIC VISIBILITY</div>
     </div>
   </div>
 </div>
@@ -87,15 +85,15 @@ td { padding: 10px 15px; border-bottom: 1px solid var(--border); font-weight: 50
 <div class="page">
 
   <section>
-    <div class="sec-head"><span class="sec-tag">SEG 01</span><span class="sec-title">B2C Marketing Performance</span></div>
-    <div class="tbl-card">
+    <div class="dept-head"><span class="dept-name">B2C Department</span><span class="dept-month">March Report</span></div>
+    <div class="tbl-wrap">
       <table>
         <thead>
-          <tr><th style="width: 40%;">B2C Metric</th><th style="width: 30%;">Achieved</th><th style="width: 30%;">% Achieved</th></tr>
+          <tr><th>Metric Description</th><th style="width:150px">Achieved</th><th style="width:150px">% Achieved</th></tr>
         </thead>
         <tbody>
           <tr><td>Videos Created</td><td class="val-high">21</td><td class="val-high">105.00%</td></tr>
-          <tr><td>Leads</td><td>96</td><td>3.20%</td></tr>
+          <tr><td>Leads</td><td>99</td><td>3.30%</td></tr>
           <tr><td>Engagement</td><td>242</td><td>0.04%</td></tr>
           <tr><td>Impressions (Organic)</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
           <tr><td>Impressions (Ad)</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
@@ -115,58 +113,63 @@ td { padding: 10px 15px; border-bottom: 1px solid var(--border); font-weight: 50
     </div>
   </section>
 
-  <div class="grid-2">
-    <section>
-      <div class="sec-head"><span class="sec-tag">SEG 02</span><span class="sec-title">Service Marketing</span></div>
-      <div class="tbl-card">
-        <table>
-          <thead>
-            <tr><th>Service Component</th><th>Achieved</th><th>% Achieved</th></tr>
-          </thead>
-          <tbody>
-            <tr class="row-cat"><td colspan="3">Email Marketing</td></tr>
-            <tr><td>Email Addresses Generated</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Email Campaign Blasts Sent</td><td class="val-high">5,352</td><td>20.00%</td></tr>
-            <tr><td>Email Open Rate (%)</td><td>0.0791</td><td>10.00%</td></tr>
-            <tr><td>Leads From Emails</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr class="row-cat"><td colspan="3">Organic & SEO</td></tr>
-            <tr><td>Organic Post On FB/IG/TT</td><td>9</td><td>90.00%</td></tr>
-            <tr><td>Reach On Social Media</td><td class="val-high">481</td><td>48.10%</td></tr>
-            <tr><td>Engagement From Social</td><td>72</td><td>7.20%</td></tr>
-            <tr><td>Traffic From Social</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Total SEO Articles Done</td><td class="val-high">15</td><td>75.00%</td></tr>
-            <tr><td>Website Traffic From Search</td><td>49</td><td>0.98%</td></tr>
-            <tr><td>Keyword Ranking</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+  <section>
+    <div class="dept-head"><span class="dept-name">Service Department</span><span class="dept-month">March Report</span></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric Description</th><th style="width:150px">Achieved</th><th style="width:150px">% Achieved</th></tr>
+        </thead>
+        <tbody>
+          <tr class="sub-cat"><td colspan="3">Email Marketing</td></tr>
+          <tr><td>No Of Email Addresses Generated</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr><td>No Email Campaign Blasts Sent</td><td class="val-high">5352</td><td>20.00%</td></tr>
+          <tr><td>Email Open Rate (%)</td><td>0.0791</td><td>10.00%</td></tr>
+          <tr><td>No Of Leads Generated From Emails</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr class="sub-cat"><td colspan="3">Organic Social</td></tr>
+          <tr><td>Total Number Of Organic Post On FB/IG/TT</td><td>9</td><td>90.00%</td></tr>
+          <tr><td>Total Reach On Social Media</td><td>481</td><td>48.10%</td></tr>
+          <tr><td>Total Engagement From Social Media</td><td>72</td><td>7.20%</td></tr>
+          <tr><td>Total Traffic From Social Media</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr class="sub-cat"><td colspan="3">SEO</td></tr>
+          <tr><td>Total Articles Done</td><td class="val-high">15</td><td>75.00%</td></tr>
+          <tr><td>Keyword Ranking For Enterprise Website</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr><td>SEO Category Ranking</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr><td>SEO Overall Ranking</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr><td>Total Website Traffic From Search</td><td>49</td><td>0.98%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <section>
-      <div class="sec-head"><span class="sec-tag">SEG 03</span><span class="sec-title">Enterprise Marketing</span></div>
-      <div class="tbl-card">
-        <table>
-          <thead>
-            <tr><th>Enterprise Component</th><th>Achieved</th><th>% Achieved</th></tr>
-          </thead>
-          <tbody>
-            <tr class="row-cat"><td colspan="3">Email Marketing</td></tr>
-            <tr><td>Email Addresses Generated</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Email Campaign Blasts Sent</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Email Open Rate (%)</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Leads From Emails</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr class="row-cat"><td colspan="3">Organic & SEO</td></tr>
-            <tr><td>Organic Post On LinkedIn</td><td class="val-high">2</td><td>16.67%</td></tr>
-            <tr><td>Reach On Social Media</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Engagement From Social</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>Total SEO Articles Done</td><td class="val-high">2</td><td>10.00%</td></tr>
-            <tr><td>Website Traffic From Search</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-            <tr><td>SEO Ranking (Category/Overall)</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </div>
+  <section>
+    <div class="dept-head"><span class="dept-name">Enterprise Department</span><span class="dept-month">March Report</span></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric Description</th><th style="width:150px">Achieved</th><th style="width:150px">% Achieved</th></tr>
+        </thead>
+        <tbody>
+          <tr class="sub-cat"><td colspan="3">Email Marketing</td></tr>
+          <tr><td>No Of Email Addresses Generated</td><td class="val-high">12982</td><td class="val-high">25.96%</td></tr>
+          <tr><td>No Email Campaign Blasts Sent</td><td>3</td><td>0.00%</td></tr>
+          <tr><td>Email Open Rate (%)</td><td>3.08%</td><td>3.08%</td></tr>
+          <tr><td>No Of Leads Generated From Emails</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr class="sub-cat"><td colspan="3">Organic Social</td></tr>
+          <tr><td>Total Number Of Organic Post On LinkedIn</td><td>7</td><td>23.33%</td></tr>
+          <tr><td>Total Reach On Social Media</td><td>336</td><td>33.60%</td></tr>
+          <tr><td>Total Engagement From Social Media</td><td>42</td><td>4.20%</td></tr>
+          <tr><td>Total Traffic From Social Media</td><td class="val-high">145</td><td class="val-high">2.90%</td></tr>
+          <tr class="sub-cat"><td colspan="3">SEO</td></tr>
+          <tr><td>Total Articles Done</td><td>7</td><td>14.00%</td></tr>
+          <tr><td>Keyword Ranking For Enterprise Website</td><td>3</td><td>0.00%</td></tr>
+          <tr><td>SEO Category Ranking</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr><td>SEO Overall Ranking</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+          <tr><td>Total Website Traffic From Search</td><td class="val-zero">0</td><td class="val-zero">0.00%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
 </div>
 
